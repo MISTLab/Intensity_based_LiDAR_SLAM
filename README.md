@@ -64,13 +64,13 @@ Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use an
 ### Compile and Launch
 - Create workspace
     ```
-    mkidr -p catkin_ws/src
+    mkidr -p ~/catkin_ws/src
     ```
 
 - Clone the project
 
     ```bash
-    cd catkin_ws/src/
+    cd ~/catkin_ws/src/
     git clone https://github.com/SnowCarter/Intensity_based_LiDAR_SLAM.git
     ```
 
@@ -102,13 +102,13 @@ Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use an
 - Create workspace
 
     ```
-    mkidr -p catkin_ws/src
+    mkidr -p ~/catkin_ws/src
     ```
 
 - Clone the project
 
     ```bash
-    cd catkin_ws/src/
+    cd ~/catkin_ws/src/
     git clone https://github.com/SnowCarter/Intensity_based_LiDAR_SLAM.git
     ```
 
@@ -133,18 +133,18 @@ Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use an
     ```
 - RVIZ (Terminal 3)
     ```
-    rosrun rviz rviz -d catkin_ws/src/Intensity_based_LiDAR_SLAM/launch/rviz_setting.rviz
+    rosrun rviz rviz -d ~/catkin_ws/src/Intensity_based_LiDAR_SLAM/launch/rviz_setting.rviz
     ```
 - Show spot mesh (optional): 
     - rviz need to find the mesh file according to the package name, so we need to make sure this package is compiled and sourced, even you can't compile it successfully. 
         ```
-        cd catkin_ws/
+        cd ~/catkin_ws/
         catkin_make
-        source devel/setup.bash
         ``` 
     - in Terminal 3:
         ```
-        rosrun rviz rviz -d catkin_ws/src/Intensity_based_LiDAR_SLAM/launch/rviz_setting.rviz
+        source ~/catkin_ws/devel/setup.bash
+        rosrun rviz rviz -d ~/catkin_ws/src/Intensity_based_LiDAR_SLAM/launch/rviz_setting.rviz
         ```
 
 ## Example Bag file
