@@ -22,12 +22,7 @@ RUN apt update && apt install -y --force-yes apt-transport-https && \
     apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB && \
     sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list' && \
     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install cpio intel-mkl-64bit-2018.2-046
-# RUN cd /dependencies_ws/ &&\
-#     git clone https://github.com/borglab/gtsam.git
-# RUN cd /dependencies_ws/gtsam &&\
-#     mkdir build && cd build &&\
-#     cmake .. &&\
-#     make install -j4
+
 RUN cd /dependencies_ws/ &&\
     wget -O gtsam.zip https://github.com/borglab/gtsam/archive/4.1.0.zip &&\
     unzip gtsam.zip -d /dependencies_ws/ &&\
@@ -49,9 +44,10 @@ RUN cp /usr/local/lib/libmetis-gtsam.so /usr/lib/
 RUN mkdir -p /intensitySLAM/src &&\
     cd /intensitySLAM/src &&\
     git clone https://github.com/SnowCarter/Intensity_based_LiDAR_SLAM.git &&\
-    cd /intensitySLAM &&\
+    cd /intensitySLAM &&\ 
     . /opt/ros/${ROS_DISTRO}/setup.sh  &&\
-    catkin_make &&\
-    echo "source /intensitySLAM/devel/setup.bash" >> ~/.bashrc
+    catkin_make
+RUN echo "source /intensitySLAM/devel/setup.bash" >> ~/.bashrc
 
+RUN rm -rf /dependencies_ws
 WORKDIR /intensitySLAM

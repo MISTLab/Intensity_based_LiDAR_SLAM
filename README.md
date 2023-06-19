@@ -135,6 +135,17 @@ Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use an
     ```
     rosrun rviz rviz -d catkin_ws/src/Intensity_based_LiDAR_SLAM/launch/rviz_setting.rviz
     ```
+- Show spot mesh (optional): 
+    - rviz need to find the mesh file according to the package name, so we need to make sure this package is compiled and sourced, even you can't compile it successfully. 
+        ```
+        cd catkin_ws/
+        catkin_make
+        source devel/setup.bash
+        ``` 
+    - in Terminal 3:
+        ```
+        rosrun rviz rviz -d catkin_ws/src/Intensity_based_LiDAR_SLAM/launch/rviz_setting.rviz
+        ```
 
 ## Example Bag file
 * [Onedrive](https://polymtlca0-my.sharepoint.com/:u:/g/personal/wenqiang_du_polymtl_ca/EUn0TO3TMLdFvBvRiVFroIUBLXWWzqdy9wXMKtIVT6MCzw?e=MedxZ2): Ouster (OS0-64)
