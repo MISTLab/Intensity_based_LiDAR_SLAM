@@ -1,0 +1,25 @@
+<launch>
+    <arg name="project" default="intensity_feature_tracker" />
+    <param name="/use_sim_time" value="true" />
+    <param name="mapping_line_resolution" type="double" value="0.4"/>
+    <param name="mapping_plane_resolution" type="double" value="0.8"/>
+    <param name="mapping_skip_frame" type="int" value="1" />
+ 
+    <rosparam file="$(find intensity_feature_tracker)/config/spot.yaml" command="load"/>
+    <node pkg="$(arg project)" type="ascanRegistration" name="ascanRegistration" output="screen" />
+    <node pkg="$(arg project)" type="odomHandler_node" name="odomHandler_node" output="screen" />
+    <node pkg="$(arg project)" type="alaserOdometry_node" name="alaserOdometry_node" output="screen" /> 
+
+    <node pkg="$(arg project)" type="$(arg project)_mapping_node" name="$(arg project)_mapping_node" output="screen" /> 
+    <!-- <node pkg="$(arg project)" type="alaserMapping_node" name="alaserMapping_node" /> -->
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 intensity_odom os_sensor" />
+
+    <group if="$(eval arg('rviz') == 1)">
+        <node pkg="rviz" 
+          type="rviz" 
+          name="$(arg project)_rviz" 
+          args="-d $(find intensity_feature_tracker)/launch/rviz_setting.rviz" 
+        />
+    </group>  
+</launch>

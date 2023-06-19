@@ -1,0 +1,53 @@
+intensity_feature_tracker:
+  # Project
+  project_name: "intensity_feature_tracker"
+
+  # Cloud parameters
+  cloud_topic: "/os_cloud_node/points"       # point cloud input topic
+  image_width: 1024               # image horitontal resolution
+  image_height: 64               # image vertical resolution
+  image_crop: 3               # mask for blocking feature extraction; indoor/handheld=196-256; jackal=0 
+  hand_held_flag: true  # mask blocking for peoplse shadow. 
+
+  # Feature matching
+  use_orb: 1                      # enabling flag for ORB feature 
+  num_orb_features: 1000          # feature num for ORB 500 1500 3000 2000
+
+
+  # CPU
+  skip_time: 0.15                 # point cloud processing time interval
+  num_threads: 16              # CPU thread number
+
+  # scan registration in loops( only one registration parameter can be set to true here)
+  use_teaser: false               # USE_TEASER
+  use_pnpransac: false            # USE_PNPRANSAC
+  use_icp: true                   # USE_ICP ICP is the best one here.
+
+loop_closure_parameters:
+  use_crop: false                #indoor: true; outdoor: false
+  crop_size: 200                # for ICP scan matching: Crop the cloud and only process the 200x200x200m^3 area indoor: 1
+
+  use_voxel_downsample: true             # usually true
+  vf_scan_res: 0.25        #outdoor: 0.4; indoor: 0.25 
+
+  icp_fitness_score: 0.5 #0.6
+
+  keyframe_time_intervals: 0.3
+  keyframe_distance_intervals: 0.3    #indoor: 0.3; outdoor: 3
+
+  min_loop_bow_threshold: 0.013 # 0.018
+  min_loop_search_gap: 20
+  skiped_frames: 10         #normal:5
+
+
+  record_ground_truth: false
+
+map_optimization_parameters:
+  sliding_window_size: 0  # sliding window size for keyframes map optimization: 10 or 5
+  ground_plane_window_size: 2 # sliding window size for ground plane optimization 10 frames: ~110ms; 100frames: best; 1000 frames: ~350ms
+  crop_size: 5            # only processing the 5x5x5m^3 area indoor: 1
+  remove_radius: 0.3
+
+
+
+
