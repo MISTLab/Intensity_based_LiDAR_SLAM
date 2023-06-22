@@ -13,7 +13,7 @@ Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use an
 @article{du2023real,
   title={Real-Time Simultaneous Localization and Mapping with LiDAR intensity},
   author={Du, Wenqiang and Beltrame, Giovanni},
-  journal={arXiv preprint arXiv:2301.09257},
+  journal={International Conference on Robotics and Automation (ICRA)},
   year={2023}
 }
 ```
