@@ -10,11 +10,12 @@ The utilization of LiDAR's intensity image for scan matching addresses the issue
 ## Paper
 Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use any of this code or datasets.
 ```
-@article{du2023real,
+@inproceedings{du2023real,
   title={Real-Time Simultaneous Localization and Mapping with LiDAR intensity},
   author={Du, Wenqiang and Beltrame, Giovanni},
-  journal={International Conference on Robotics and Automation (ICRA)},
-  year={2023}
+  booktitle={2023 International Conference on Robotics and Automation (ICRA)},
+  year={2023},
+  organization={IEEE}
 }
 ```
 ## Authors
