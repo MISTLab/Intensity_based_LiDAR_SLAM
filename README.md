@@ -14,6 +14,7 @@ Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use an
   title={Real-Time Simultaneous Localization and Mapping with LiDAR intensity},
   author={Du, Wenqiang and Beltrame, Giovanni},
   booktitle={2023 International Conference on Robotics and Automation (ICRA)},
+  pages={4164--4170},
   year={2023},
   organization={IEEE}
 }
