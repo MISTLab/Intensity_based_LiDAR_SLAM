@@ -104,7 +104,7 @@ Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use an
 - Create workspace
 
     ```
-    mkidr -p ~/catkin_ws/src
+    mkdir -p ~/catkin_ws/src
     ```
 
 - Clone the project
