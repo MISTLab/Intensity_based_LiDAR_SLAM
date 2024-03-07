@@ -150,7 +150,7 @@ Thank you for citing our [paper](https://arxiv.org/abs/2301.09257) if you use an
         ```
 
 ## Example Bag file
-* [Onedrive](https://polymtlca0-my.sharepoint.com/:u:/g/personal/wenqiang_du_polymtl_ca/EUn0TO3TMLdFvBvRiVFroIUBLXWWzqdy9wXMKtIVT6MCzw?e=MedxZ2): Ouster (OS0-64)
+* [Onedrive](https://polymtlca0-my.sharepoint.com/:u:/g/personal/wenqiang_du_polymtlus_ca/EUn0TO3TMLdFvBvRiVFroIUB9ggQNb3dUfYqoe073WD7hA?e=cJao7W): Ouster (OS0-64)
     ```
     path:         spot_corridor.bag
     version:      2.0
